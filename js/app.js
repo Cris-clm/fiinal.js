@@ -87,6 +87,15 @@ function renderizarArticulosFiltrados(e) {
         renderizarContenedor(articulos.filter(articulo => articulo.prenda.toLowerCase() == e.target.id))
     }
 }
+    comprobar(carrito)
+
+    function comprobar() {
+        if (localStorage.getItem("Carrito")) {
+            carrito = JSON.parse(localStorage.getItem("Carrito"))
+            renderCarrito(carrito)
+           
+        } 
+    }
 
 //funcion de filtrado de renderezar articulos 
 function renderizarContenedor(arrayDeProductos) {
